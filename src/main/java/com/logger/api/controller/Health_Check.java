@@ -1,14 +1,14 @@
 package com.logger.api.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import java.util.concurrent.CompletableFuture;
+import com.logger.api.common.AppLogger;
+import org.slf4j.Logger;
 
 @RestController
 public class Health_Check {
-    private static final Logger logger = LoggerFactory.getLogger(Health_Check.class);
+    private final Logger logger = AppLogger.getLogger(Health_Check.class);
 
     @Async
     @GetMapping("/health-check")
