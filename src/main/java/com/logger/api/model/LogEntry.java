@@ -11,7 +11,7 @@ import java.util.Map;
 public class LogEntry {
     @Id
     private String Id;
-    private final Instant createdAt;
+    public final Instant createdAt;
     private Map<String, Object> payload;
     private LogEnum level;
 
