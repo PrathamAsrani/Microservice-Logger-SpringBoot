@@ -3,7 +3,7 @@ package com.logger.api.model;
 import com.logger.api.enums.LogEnum;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+import org.springframework.data.annotation.CreatedDate;
 import java.time.Instant;
 import java.util.Map;
 
@@ -11,7 +11,8 @@ import java.util.Map;
 public class LogEntry {
     @Id
     private String Id;
-    public final Instant createdAt;
+    @CreatedDate
+    public Instant createdAt;
     private Map<String, Object> payload;
     private LogEnum level;
 
